@@ -9,8 +9,16 @@ import jwt from 'jsonwebtoken';
 dotenv.config();
 
 const app = express();
-app.use(cors());
-app.use(express.json());
+
+// 1. MUST BE FIRST
+app.use(cors()); 
+
+// 2. MUST BE SECOND
+app.use(express.json()); 
+
+// 3. THEN YOUR ROUTES
+app.post('/api/login');
+app.all('/api/comments');
 
 
 const authenticateToken = (req, res, next) => {
