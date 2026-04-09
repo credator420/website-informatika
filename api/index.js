@@ -21,8 +21,6 @@ app.use(cors({
 app.use(express.json()); 
 
 // 3. THEN YOUR ROUTES
-app.post('/api/login');
-app.all('/api/comments');
 
 
 const authenticateToken = (req, res, next) => {
