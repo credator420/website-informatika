@@ -106,3 +106,17 @@ document.addEventListener('DOMContentLoaded', () => {
     updateUI();
     loadComments();
 });
+
+const observer = new IntersectionObserver((entries) => {
+    entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+            entry.target.classList.add('active');
+        }
+    });
+}, { threshold: 0.1 });
+
+// Apply this to all your cards and sections
+document.querySelectorAll('section, .card').forEach((el) => {
+    el.classList.add('reveal');
+    observer.observe(el);
+});

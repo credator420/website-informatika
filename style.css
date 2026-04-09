@@ -261,3 +261,48 @@ button:hover, .submit-btn:hover {
 }
 
 
+
+/* Initial state: Hidden and slightly lower */
+.reveal {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: all 0.8s ease-out;
+}
+
+/* Active state: Visible and in place */
+.reveal.active {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.hero-section {
+    background: linear-gradient(-45deg, #000000, #1a1a1a, #2d1b1b, #000000);
+    background-size: 400% 400%;
+    animation: gradientBG 15s ease infinite;
+}
+
+@keyframes gradientBG {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+}
+
+.card, .container {
+    background: rgba(255, 255, 255, 0.03); /* Tiny bit of white */
+    backdrop-filter: blur(10px); /* The "Frosted" effect */
+    border: 1px solid rgba(255, 255, 255, 0.1); /* Subtle edge */
+    color: black;
+}
+
+.submit-btn {
+    transition: all 0.2s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+.submit-btn:active {
+    transform: scale(0.95); /* Slight "squish" when clicked */
+}
+
+/* Add a glowing trail on hover */
+.submit-btn:hover {
+    box-shadow: 0 0 20px var(--primary);
+}
