@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fyne shii</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <nav class="navbar">
+        <div class="logo"><img class="logo" src="images/zaza.jpg" alt="logo"></div>
+        <ul class="nav-links">
+            <li><a href="#home">Home</a></li>
+            <li><a href="#about">About</a></li>
+            <li><a href="#comments-anchor">Community</a></li>
+            <li><a href="#contact">Contact</a></li>
+        </ul>
+    </nav>
+
+    <main>
+        <section id="home" class="hero-section">
+            <h1>Welcome to hell</h1>
+            <p>There is no coming back</p>
+        </section>
+
+        <section id="about" class="info-section">
+            <h2>About Us</h2>
+            <p>We are not human. we posses superpowers and shi</p>
+            <div class="card-container">
+    <div class="card">
+        <h3>How does it work?</h3>
+        <p>Login, sign up and comments work by calling an api ran on nodejs server. After  that data is proccesed and sent to postgres database hosted on neon server</p>
+    </div>
+    
+    <div class="card">
+        <h3>How are emails sent?</h3>
+        <p>Emails are sent using Emailjs email service and formspree.</p>
+    </div>
+    
+    <div class="card">
+        <h3>Thanks for coming ;)</h3>
+        <p>Hope you find everything you need on this page. Enjoy your day.</p>
+    </div>
+</div>
+        </section>
+
+        <section id="auth-section" class="container">
+            <div id="auth-guest">
+                <h3>Join the Conversation</h3>
+                <div class="auth-tabs">
+                    <button class="btn-tab" onclick="toggleAuth('login')">Login</button>
+                    <button class="btn-tab" onclick="toggleAuth('signup')">Sign Up</button>
+                </div>
+                
+                <form id="login-form" class="auth-form hidden">
+                    <input type="text" id="login-user" placeholder="Username" required>
+                    <input type="password" id="login-pass" placeholder="Password" required>
+                    <button type="submit" class="submit-btn">Login</button>
+                </form>
+
+                <form id="signup-form" class="auth-form hidden">
+                    <input type="text" id="signup-user" placeholder="Choose Username" required>
+                    <input type="password" id="signup-pass" placeholder="Create Password" required>
+                    <button type="submit" class="submit-btn">Create Account</button>
+                </form>
+            </div>
+
+            <div id="auth-user" class="hidden">
+                <p>Logged in as <strong id="display-username" style="color: coral;"></strong></p>
+                <button onclick="logout()" class="btn-small">Logout</button>
+            </div>
+        </section>
+
+        <section id="comments-anchor" class="container">
+            <h2>Community Feed</h2>
+            
+            <div id="comments-display">
+                <p>Loading the voices from the void...</p>
+            </div>
+
+            <div id="comment-input-area" class="hidden">
+                <form id="comment-form">
+                    <textarea id="comment-text" placeholder="Share your thoughts..." required></textarea>
+                    <button type="submit" class="submit-btn">Post Comment</button>
+                </form>
+            </div>
+
+            <p id="login-prompt">You must be <a href="#auth-section" onclick="toggleAuth('login')">logged in</a> to post a comment.</p>
+        </section>
+
+        <section id="contact" class="contact-container">
+            <div class="contact-card">
+                <h2>Get in Touch</h2>
+                <p>If you are brave enough to talk to us then you can do so here: </p>
+        
+                <form action="https://formspree.io/f/xaqlzvyl" method="POST" id="contact-form">
+                    <div class="input-group">
+                        <input type="text" name="name" required placeholder=" ">
+                        <label>Your name</label>
+                    </div>
+        
+                    <div class="input-group">
+                        <input type="email" name="email" required placeholder=" ">
+                        <label>Email Address</label>
+                    </div>
+        
+                    <div class="input-group">
+                        <textarea name="message" required placeholder=" "></textarea>
+                        <label>How can I help?</label>
+                    </div>
+        
+                    <input type="text" name="_gotcha" style="display:none !important" tabindex="-1" autocomplete="off">
+        
+                    <button type="submit" class="submit-btn">
+                        <span>Send Message</span>
+                    </button>
+                </form>
+            </div>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <p>&copy; 2026 david OG zabijak</p>
+    </footer>
+
+    <script src="script.js"></script>
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
+</body>
+</html>
