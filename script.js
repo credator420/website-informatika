@@ -1,4 +1,4 @@
-const API_BASE = 'https://website-informatika.vercel.app//api';
+const API_BASE = 'https://website-informatika.vercel.app/api';
 
 function updateUI() {
     const token = localStorage.getItem('token');
